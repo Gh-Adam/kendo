@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { IntlService } from "@progress/kendo-angular-intl";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-create-report",
   templateUrl: "./create-report.component.html",
@@ -21,7 +22,12 @@ export class CreateReportComponent implements OnInit {
   workflows: Array<string> = ["Standard", "Not Standard", "Custom"];
   originator = this.originators[3];
   workflow = this.workflows[0];
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+  goToReports() {
+
+    this.router.navigateByUrl("reports");
+
+  }
 }

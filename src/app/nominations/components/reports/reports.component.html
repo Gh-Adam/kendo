@@ -22,17 +22,17 @@
     <a class="nav-link" href="#">Assigned Reports</a>
   </nav>
   <div class="col-12 d-flex status-actions">
-    <a class="col d-inline-flex flex-column align-items-center py-2" (click) ="type = 1; getData()" [class.active] = "type === 1">
+    <a class="col d-inline-flex flex-column align-items-center py-2" (click) ="type = 1; getData(1)" [class.active] = "type === 1">
       <span class="text-dark font-weight-bold">TO SUBMIT</span>
       <span class="text-primary count">{{ counters?.openedCount > 0 ? counters.openedCount : 0 }}</span>
       <span class="text-secondary font-weight-bold">0.0000 EGP(EGB)</span>
     </a>
-    <a class="col d-inline-flex flex-column align-items-center py-2" (click) ="type = 2; getData()" [class.active] = "type === 2">
+    <a class="col d-inline-flex flex-column align-items-center py-2" (click) ="type = 2; getData(2)" [class.active] = "type === 2">
       <span class="text-dark font-weight-bold">IN PROGRESS</span>
       <span class="text-primary count">{{ counters?.submittedCount > 0 ? counters.submittedCount : 0}}</span>
       <span class="text-secondary font-weight-bold">0.0000 EGP(EGB)</span>
     </a>
-    <a class="col d-inline-flex flex-column align-items-center py-2" (click) ="type = 3; getData()" [class.active] = "type === 
+    <a class="col d-inline-flex flex-column align-items-center py-2" (click) ="type = 3; getData(3)" [class.active] = "type === 
     3">
       <span class="text-dark font-weight-bold">WAITING ACTION</span>
       <span class="text-success count">{{ counters?.awaitingCount > 0 ? counters.awaitingCount : 0}}</span>

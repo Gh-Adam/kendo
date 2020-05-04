@@ -1,12 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { expensesReports } from "./../../../shared/components/kendo-grid/products";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-reports",
   templateUrl: "./reports.component.html",
   styleUrls: ["./reports.component.scss"],
 })
 export class ReportsComponent implements OnInit {
-  type: number = 1
+  type: number = -1
   columns: any[] = [
     { field: "Tracking#" },
     { field: "Title" },
@@ -16,14 +17,19 @@ export class ReportsComponent implements OnInit {
   ];
   records: any[] = [];
   counters: any;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.getData();
+    this.loadAllData();
   }
 
-  getData() {
-    switch(this.type) {
+loadAllData() {
+    this.getData(3);
+    this.getData(2);
+    this.getData(1);
+}
+  getData(type : number) {
+    switch(type) {
       case 1: {
         this.records = expensesReports.filter(e => e.State.toLowerCase() === 'open');
         this.counters= {
@@ -58,5 +64,9 @@ export class ReportsComponent implements OnInit {
       default: 
         this.records = []
     }
+  }
+
+   createReport() {
+    this.router.navigateByUrl("reports/create-report");
   }
 }
