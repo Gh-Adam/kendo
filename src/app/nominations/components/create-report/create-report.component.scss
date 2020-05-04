@@ -1,0 +1,49 @@
+.create-report {
+  .page-content {
+    .filters {
+      border: 1px solid #ccc;
+      label {
+        font-size: 0.8rem;
+      }
+      .info {
+        min-height: 100% !important;
+        &:not(:first-child) {
+          border-left: 1px solid #ccc;
+        }
+
+        span {
+          &:first-of-type {
+            font-size: 0.8rem;
+            font-weight: 600;
+          }
+          &:last-of-type {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+    .wrapper {
+      ::ng-deep > .nav.nav-tabs {
+        background-color: #c7e5f394 !important;
+        border-top: 1px solid #ccc !important;
+        border-bottom: 1px solid #ccc !important;
+        padding: 1rem 1rem 0 1rem;
+      }
+
+      .tab-content {
+        .right-side {
+          border-left: 2px solid rgba(51, 45, 45, 0.432);
+        }
+
+        .left-side {
+          border-right: 2px solid rgba(51, 45, 45, 0.432);
+        }
+      }
+
+      .btn-gray {
+        background-color: #aebdce;
+        border-color: #aebdce;
+      }
+    }
+  }
+}

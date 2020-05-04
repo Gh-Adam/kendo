@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+a {
+  color: #212529;
+}
+
+.btn-success {
+    background-color: #218838;
+    border-color: #218838;
+    border-radius: .1rem;
+}
+
+.breadcrumb {
+    background-color: #fff;
+    color: #212529;
+    font-size: 0.9rem;
+    .breadcrumb-item.active {
+      color: #212529;
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+      padding-right: 0.15rem;
+      color: #212529;
+      content: ">";
+    }
+  }
+

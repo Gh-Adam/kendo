@@ -1,1 +1,73 @@
 @import "~@progress/kendo-theme-default/scss/all";
+
+
+
+.wrapper {
+  nav.nav-links {
+    background-color: #c7e5f394;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1px;
+
+    .nav-link {
+        padding: .5rem .5rem;
+        margin-left: .5rem;
+        border-bottom: 5px solid transparent;
+        &:hover,
+        &.active {
+           font-weight: bold;
+           border-bottom: 5px solid #218838;
+        }
+    }
+  }
+
+  .status-actions {
+      a {
+          border: 1px solid #ccc;
+          border-bottom: 8px solid transparent;
+          transition: all ease-in-out .5s;
+          &:hover,
+          &.active {
+              background-color: #c7e5f394;
+              border-bottom: 8px solid #218838;
+          }
+
+          > span {
+              &.count {
+                font-size: 4rem;
+                line-height: 4rem;
+                font-weight: 500;
+                margin: 1rem 0;
+              }
+            
+          }
+      }
+  }
+
+  .k-grid-header {
+  border-top: 3px solid #212529;
+  border-bottom: 1px solid #777;
+}
+.k-grid-table {
+  tbody {
+    tr {
+      background-color: #fff !important;
+      border: none;
+    }
+    td {
+      border: none !important;
+      &:first-of-type {
+        color: #09a1e7;
+        text-decoration: underline dashed;
+      }
+
+      &:last-of-type {
+          text-align: right !important;
+          &::after {
+              content:"  EGB(EGB)"
+          }
+      }
+    }
+  }
+}
+}

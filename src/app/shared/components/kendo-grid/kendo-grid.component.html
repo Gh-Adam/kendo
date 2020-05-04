@@ -1,9 +1,22 @@
-<kendo-grid [data]="gridData" [height]="410" [resizable]="true" [sortable]="{mode: 'multiple'}" [sort]="sort"
-    (sortChange)="sortChange($event)" [pageable]="{
-        info: true,
-        type: 'input',
-        pageSizes: true,
-        previousNext: true}" [pageSize]="pageSize" (pageChange)="pageChange($event)" [skip]="state.skip"
-    filterable="menu" (dataStateChange)="dataStateChange($event)">
-    <kendo-grid-column *ngFor="let col of columns" [field]="col.field"></kendo-grid-column>
+<kendo-grid
+  [data]="gridData"
+  [height]="410"
+  [resizable]="true"
+  [sortable]="{ mode: 'multiple' }"
+  [sort]="sort"
+  (sortChange)="sortChange($event)"
+  [pageable]="{
+    info: true,
+    type: 'input',
+    pageSizes: true,
+    previousNext: true
+  }"
+  [pageSize]="pageSize"
+  (pageChange)="pageChange($event)"
+  [skip]="state.skip"
+  [filterable]="false"
+  (dataStateChange)="dataStateChange($event)"
+>
+  <kendo-grid-column *ngFor="let col of columns" [field]="col.field">
+  </kendo-grid-column>
 </kendo-grid>

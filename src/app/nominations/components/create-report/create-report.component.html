@@ -1,0 +1,236 @@
+<div class="create-report bg-light">
+  <div class="page-head shadow-sm bg-white pb-3 px-4">
+    <nav aria-label="breadcrumb" class="col-12">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="#">Entries</a></li>
+        <li class="breadcrumb-item" aria-current="page">
+          Expense Manager
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Expense Report
+        </li>
+      </ol>
+    </nav>
+    <div class="col-12 d-flex align-items-center">
+      <div class="col-md-6 font-weight-bold h5">
+        <ins>Noor A., Noor's Expenses Report 3/2/2020 to 6/2/2020 </ins>
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-end">
+        <div class="text-secondary">
+          State: <span class="text-success">Open</span> | Tracking # :
+          <span class="text-success">New</span>
+        </div>
+        <button class="btn btn-outline-secondary mx-3">Back</button>
+        <button class="btn btn-success mx-3">Save</button>
+        <button class="btn btn-primary" disabled>Actions</button>
+      </div>
+    </div>
+  </div>
+  <div class="page-content mx-5 bg-white mt-4">
+    <div class="d-flex filters">
+      <form class="col-md-6 d-flex flex-wrap align-items-center py-2 info">
+        <div class="col-md-4">
+          <label>Start Date : </label>
+          <kendo-datepicker
+            (valueChange)="onChange($event)"
+            [value]="startDate"
+          >
+          </kendo-datepicker>
+        </div>
+        <div class="col-md-4">
+          <label>End Date : </label>
+          <kendo-datepicker (valueChange)="onChange($event)" [value]="endDate">
+          </kendo-datepicker>
+        </div>
+
+        <div class="col-md-4">
+          <label>Originator : </label>
+          <kendo-combobox
+            [data]="originators"
+            [allowCustom]="allowCustom"
+            [value]="originator"
+          >
+          </kendo-combobox>
+        </div>
+        <div class="col-md-4">
+          <label>Workflow : </label>
+          <kendo-combobox
+            [data]="workflows"
+            [allowCustom]="allowCustom"
+            [value]="workflow"
+          >
+          </kendo-combobox>
+        </div>
+      </form>
+      <div
+        class="col-md-2 d-flex flex-wrap align-items-center justify-content-center py-2 info"
+      >
+        <span class="text-secondary text-uppercase">Total Reimbursable</span>
+        <span class="text-success font-weight-bold">0.0000 EGP(EGB)</span>
+      </div>
+      <div
+        class="col-md-2 d-flex flex-wrap align-items-center justify-content-center py-2 info"
+      >
+        <span class="text-secondary text-uppercase">Amount Due</span>
+        <span class="text-success font-weight-bold">0.0000 EGP(EGB)</span>
+      </div>
+      <div
+        class="col-md-2 d-flex flex-wrap align-items-center justify-content-center py-2 info"
+      >
+        <span class="text-secondary text-uppercase">Total Reimbursed</span>
+        <span class="text-dark font-weight-bold">0.0000 $(USD)</span>
+      </div>
+    </div>
+
+    <div class="wrapper border">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            id="home-tab"
+            data-toggle="tab"
+            href="#home"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+            >Entries</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="rece-tab"
+            data-toggle="tab"
+            href="#rece"
+            role="tab"
+            aria-controls="rece"
+            aria-selected="false"
+            >Receipts</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="notes-tab"
+            data-toggle="tab"
+            href="#notes"
+            role="tab"
+            aria-controls="notes"
+            aria-selected="false"
+            >Notes</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="docs-tab"
+            data-toggle="tab"
+            href="#docs"
+            role="tab"
+            aria-controls="docs"
+            aria-selected="false"
+            >Documents</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="history-tab"
+            data-toggle="tab"
+            href="#history"
+            role="tab"
+            aria-controls="history"
+            aria-selected="false"
+            >History</a
+          >
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active d-flex"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <div class="col-md-6 left-side">
+            <!-- <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+              </tbody>
+            </table> -->
+          </div>
+          <div class="col-md-6 right-side">
+            <ul class="nav nav-tabs pt-3" id="subTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link bg-light"
+                  id="detail-tab"
+                  data-toggle="tab"
+                  href="#detail"
+                  role="tab"
+                  aria-controls="detail"
+                  aria-selected="true"
+                  >Detail</a
+                >
+              </li>
+              <button class="btn btn-gray ml-auto mb-2">New</button>
+            </ul>
+            <div class="tab-content" id="subTabContent">
+              <div
+                class="tab-pane fade show active d-flex"
+                id="detail"
+                role="tabpanel"
+                aria-labelledby="detail-tab"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="rece"
+          role="tabpanel"
+          aria-labelledby="rece-tab"
+        >
+          ... Receipts
+        </div>
+        <div
+          class="tab-pane fade"
+          id="notes"
+          role="tabpanel"
+          aria-labelledby="notes-tab"
+        >
+          ... Notes
+        </div>
+        <div
+          class="tab-pane fade"
+          id="docs"
+          role="tabpanel"
+          aria-labelledby="docs-tab"
+        >
+          ... Documents
+        </div>
+        <div
+          class="tab-pane fade"
+          id="history"
+          role="tabpanel"
+          aria-labelledby="history-tab"
+        >
+          ... History
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

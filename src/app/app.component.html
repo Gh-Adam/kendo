@@ -1,2 +1,55 @@
-<app-kendo-grid></app-kendo-grid>
-<app-kendo-date-picker></app-kendo-date-picker>
+<!-- <app-kendo-grid></app-kendo-grid>
+<app-kendo-date-picker></app-kendo-date-picker> -->
+<!-- <app-reports></app-reports> -->
+
+<!-- <router-outlet><router-outlet>
+ -->
+
+<!-- <app-kendo-grid></app-kendo-grid> -->
+
+<div class="wrapper py-3" *ngIf="showView">
+  <nav aria-label="breadcrumb" class="col-12">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="#">Entries</a></li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Expense Manager
+      </li>
+    </ol>
+  </nav>
+  <div class="col-12 d-flex">
+    <h3 class="page-head mb-0 col-md-10">
+      Expense Report Manager
+    </h3>
+    <button class="btn btn-success col-md-2" (click)="createReport()">
+      Create Expense Report
+    </button>
+  </div>
+
+  <nav class="nav nav-links row my-3 px-4">
+    <a class="nav-link active" href="#">Overview</a>
+    <a class="nav-link" href="#">My Reports</a>
+    <a class="nav-link" href="#">Assigned Reports</a>
+  </nav>
+  <div class="col-12 d-flex status-actions">
+    <a class="col d-inline-flex flex-column align-items-center py-2 active">
+      <span class="text-dark font-weight-bold">TO SUBMIT</span>
+      <span class="text-primary count">3</span>
+      <span class="text-secondary font-weight-bold">0.0000 EGP(EGB)</span>
+    </a>
+    <a class="col d-inline-flex flex-column align-items-center py-2">
+      <span class="text-dark font-weight-bold">IN PROGRESS</span>
+      <span class="text-primary count">4</span>
+      <span class="text-secondary font-weight-bold">0.0000 EGP(EGB)</span>
+    </a>
+    <a class="col d-inline-flex flex-column align-items-center py-2">
+      <span class="text-dark font-weight-bold">WAITING ACTION</span>
+      <span class="text-success count">1</span>
+      <span class="text-secondary font-weight-bold">0.0000 $(USD)</span>
+    </a>
+  </div>
+  <div class="col-12">
+    <app-kendo-grid></app-kendo-grid>
+  </div>
+</div>
+
+<router-outlet><router-outlet> </router-outlet></router-outlet>
