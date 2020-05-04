@@ -4,7 +4,7 @@ import { CommonModule } from "@angular/common";
 import { NominationsRoutingModule } from "./nominations-routing.module";
 import { ReportsComponent } from "./components/reports/reports.component";
 import { CreateReportComponent } from "./components/create-report/create-report.component";
-import { SharedModule, GridModule } from "@progress/kendo-angular-grid";
+import { SharedModule } from "./../shared/shared.module";
 import {
   DateInputsModule,
   DatePickerModule,

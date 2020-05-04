@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 export class AppComponent {
   constructor(private router: Router) {}
 
-  showView = true;
+  // showView = true;
   title = "testing-kendo";
   // records = expensesReports
   // columns: any[] = [
@@ -21,7 +21,7 @@ export class AppComponent {
   // ];
 
   createReport() {
-    this.showView = false;
+    // this.showView = false;
     this.router.navigateByUrl("reports/create-report");
   }
 }

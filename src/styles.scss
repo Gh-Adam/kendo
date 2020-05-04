@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@progress/kendo-theme-default/scss/all";
 a {
   color: #212529;
 }
@@ -23,3 +24,29 @@ a {
     }
   }
 
+.k-grid-header {
+  border-top: 3px solid #212529;
+  border-bottom: 1px solid #777;
+}
+.k-grid-table {
+  tbody {
+    tr {
+      background-color: #fff !important;
+      border: none;
+    }
+    td {
+      border: none !important;
+      &:first-of-type {
+        color: #09a1e7;
+        text-decoration: underline dashed;
+      }
+
+      &:last-of-type {
+          text-align: right !important;
+          &::after {
+              content:"  EGB(EGB)"
+          }
+      }
+    }
+  }
+}

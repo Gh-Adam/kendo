@@ -12,4 +12,11 @@ export class KendoDatePickerComponent implements OnInit {
   ngOnInit() {
   }
 
+onBlur() {}
+onChange(event) {}
+onClose(){}
+onFocus(){}
+onOpen(){}
+
+
 }

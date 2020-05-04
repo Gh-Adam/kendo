@@ -6,6 +6,7 @@ import { expensesReports } from "./../../../shared/components/kendo-grid/product
   styleUrls: ["./reports.component.scss"],
 })
 export class ReportsComponent implements OnInit {
+  type: number = 1
   columns: any[] = [
     { field: "Tracking#" },
     { field: "Title" },
@@ -13,12 +14,49 @@ export class ReportsComponent implements OnInit {
     { field: "State" },
     { field: "TotalReimbursable" },
   ];
-// columns = [{ field: "ProductID" }, { field: "ProductName" }, { field: "QuantityPerUnit" }];
-records = expensesReports
+  records: any[] = [];
+  counters: any;
   constructor() {}
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
+    switch(this.type) {
+      case 1: {
+        this.records = expensesReports.filter(e => e.State.toLowerCase() === 'open');
+        this.counters= {
+          ...this.counters,
+          openedCount: this.records.length
+        };
+        break;
+      }
+         
+      case 2: {
+      this.records = expensesReports.filter(e => e.State.toLowerCase() === 'submitted');
+      this.counters= {
+          ...this.counters,
+          submittedCount: this.records.length
+        };
     
-    console.log("records", this.records);
+      break;
+      }
+        
+        
+      case 3: {
+      this.records = expensesReports.filter(e => e.State.toLowerCase() === 'awaiting action');
+      this.counters= {
+          ...this.counters,
+          awaitingCount: this.records.length
+        };
+      
+      break;
+      }
+        
+       
+      default: 
+        this.records = []
+    }
   }
 }

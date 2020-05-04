@@ -1,7 +1,46 @@
-<!-- <div class="w-100 d-flex">
-  <button class="col"></button>
-  <button class="col">Btn 2</button>
-  <button class="col">Btn 3</button>
+<div class="wrapper py-3">
+  <nav aria-label="breadcrumb" class="col-12">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="#">Entries</a></li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Expense Manager
+      </li>
+    </ol>
+  </nav>
+  <div class="col-12 d-flex">
+    <h3 class="page-head mb-0 col-md-10">
+      Expense Report Manager
+    </h3>
+    <button class="btn btn-success col-md-2" (click)="createReport()">
+      Create Expense Report
+    </button>
+  </div>
+
+  <nav class="nav nav-links row my-3 px-4">
+    <a class="nav-link active" href="#">Overview</a>
+    <a class="nav-link" href="#">My Reports</a>
+    <a class="nav-link" href="#">Assigned Reports</a>
+  </nav>
+  <div class="col-12 d-flex status-actions">
+    <a class="col d-inline-flex flex-column align-items-center py-2" (click) ="type = 1; getData()" [class.active] = "type === 1">
+      <span class="text-dark font-weight-bold">TO SUBMIT</span>
+      <span class="text-primary count">{{ counters?.openedCount > 0 ? counters.openedCount : 0 }}</span>
+      <span class="text-secondary font-weight-bold">0.0000 EGP(EGB)</span>
+    </a>
+    <a class="col d-inline-flex flex-column align-items-center py-2" (click) ="type = 2; getData()" [class.active] = "type === 2">
+      <span class="text-dark font-weight-bold">IN PROGRESS</span>
+      <span class="text-primary count">{{ counters?.submittedCount > 0 ? counters.submittedCount : 0}}</span>
+      <span class="text-secondary font-weight-bold">0.0000 EGP(EGB)</span>
+    </a>
+    <a class="col d-inline-flex flex-column align-items-center py-2" (click) ="type = 3; getData()" [class.active] = "type === 
+    3">
+      <span class="text-dark font-weight-bold">WAITING ACTION</span>
+      <span class="text-success count">{{ counters?.awaitingCount > 0 ? counters.awaitingCount : 0}}</span>
+      <span class="text-secondary font-weight-bold">0.0000 $(USD)</span>
+    </a>
+  </div>
+  <div class="col-12">
+    <app-kendo-grid [records]="records" [columns]="columns" *ngIf="records && records.length > 0"></app-kendo-grid>
+    <p class="text-center text-danger font-weight-bold" *ngIf="!records || records.length == 0">No Data Found</p>
+  </div>
 </div>
-<app-kendo-grid [records]="records" [columns]="columns"></app-kendo-grid> -->
-<app-kendo-grid></app-kendo-grid>
